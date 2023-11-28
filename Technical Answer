@@ -1,0 +1,203 @@
+1. Test scenario
+    Scenario : Valid login
+    Given browser is open to login page
+    When input user name and password
+    Then user will go to homepage
+
+    Scenario : Invalid login
+    Given user open browser to login page
+    When input username without password
+    Then page will show warning message
+
+    Scenario : Invalid credential
+    Given login browser is opened
+    When user input username and invalid password
+    Then user failed to login
+
+    Scenario : Invalid credential
+    Given user open login page
+    When username and password invalid
+    Then login is failed
+
+    Scenario : Invalid credential
+    Given browser open login page
+    When username is empty
+    Then user failed to login
+
+    Scenario : Account page
+    Given browser open login page
+    When user choose icon account
+    Then page account will opened
+
+    Scenario : Set photo profile
+    Given user open page account
+    When user choose photo profile
+    And submit photo profile
+    Then account have photo profile
+
+    Scenario : Add new address
+    Given account page is opened
+    When user go to page address
+    And add new address
+    Then page have new address
+
+    Scenario : Change password
+    Given user open page account
+    When choose change password
+    And user change password
+    Then password will change
+
+    Scenario : My order
+    Given account page is opened
+    When user choose my order
+    Then page will open list order
+
+    Scenario : Unpaid order
+    Given account page is opened
+    When user choose my order
+    And unpaid filter is chosen
+    Then page will show list unpaid order
+
+    Scenario : Processed order
+    Given browser opened account page
+    When user choose my order
+    And choose filter process
+    Then list order process will show
+
+    Scenario : Order sent
+    Given user open page account
+    When choose my order
+    And filter sent is chosen
+    Then list order sent will show
+
+    Scenario : Order done
+    Given browser open account page
+    When user choose my order
+    And choose filter sent
+    Then page will show list order status sent
+
+    Scenario : Order cancelled
+    Given user open account page
+    When user choose my order
+    And filter cancelled is chosen
+    Then list order with status cancelled will show
+
+    Scenario : Offline order
+    Given when user open account page
+    When user choose my order
+    And filter order offline
+    Then list order offline will appear
+    Scenario : Online order
+    Given page account is opened
+    When user open my order
+    And filter order online
+    Then list order online will show
+
+    Scenario : Valid search order
+    Given account page is open
+    When user open my order
+    And search order with valid key
+    Then order will show in list
+
+    Scenario : Invalid search order
+    Given user open account page
+    When my order is open
+    And user input invalid key
+    Then list order will empty
+
+    Scenario : Order in 30 days
+    Given browser open page account
+    When user choose my order
+    And filter list order in last 30 days
+    The list will show order
+
+    Scenario : No order in 90 days
+    Given user open account page
+    When choose my order
+    And filter last 90 days
+    Then list order is empty
+
+    Scenario : empty order in last year
+    Given user open account page
+    When open my order
+    And filter order in last year
+    Then list order will empty
+
+    Scenario : wishlist product is empty
+    Given user open account page
+    When choose wishlist product
+    Then list order will empty
+
+    Scenario : Product last seen 
+    Given account page is opened
+    When user choose last seen menu
+    Then list will show product last seen
+
+    Scenario : Page membership
+    Given user open my account page
+    When choose JT Poin
+    Then browser will show membership page
+
+    Scenario : User activities
+    Given account page is opened
+    When user open JT Poin
+    And choose activities JT Poin
+    Then page will show activities member
+
+    Scenario : List voucher
+    Given account page is opened
+    When user choose my voucher
+    And choose first voucher
+    Then page will show detail voucher
+
+    Scenario : Valid key voucher
+    Given user open account page
+    When user choose my voucher
+    And search with valid key
+    Then page will show list voucher
+
+    Scenario : Invalid voucher key
+    Given account page is opened
+    When user choose my voucher
+    And search with invalid key
+    Then list voucher will empty
+
+    Scenario : search product with valid key
+    Given homepage is opened
+    When user search product with valid key
+    Then page will show list product
+
+    Scenario : Search product with invalid key
+    Given user open homepage
+    When search key product is invalid
+    Then page will show empty product
+
+    Scenario : Search product with number
+    Given home page is opened
+    When user search product with number
+    Then page will show list product
+
+    Scenario : Search product with symbol
+    Given user open homepage
+    When input search key with symbol
+    Then page will show list product
+
+2. List bug : 
+    Search product key !@#
+            Expected result : list product is empty
+            Actual result      : page show all product
+
+    Header must be direct to homepage (www.jamtangan.com)
+    Step : 
+    Go to https://bantuan.jamtangan.com/hc/id
+    Click header icon jamtangan
+            Expected result : page will direct to homepage
+            Actual result : page stay in https://bantuan.jamtangan.com/hc/id
+
+    Search product with filter ‘Tas’
+            Expected result : page show product base on filter
+            Actual result      : page still show product watch
+
+3. Feature development : 
+    - Make a game play in web or apps and score can be JT Poin or free gift
+    - Payment method from e wallet
